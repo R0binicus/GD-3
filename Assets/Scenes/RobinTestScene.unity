@@ -316,7 +316,7 @@ GameObject:
   - component: {fileID: 946935803}
   - component: {fileID: 946935804}
   m_Layer: 0
-  m_Name: Bottom Border
+  m_Name: Right Border
   m_TagString: Border
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -329,14 +329,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 946935802}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -5.5, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
+  m_LocalPosition: {x: 8.5, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1697166263}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
 --- !u!61 &946935804
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -361,7 +361,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 18, y: 1}
+  m_Size: {x: 15, y: 1}
   m_EdgeRadius: 0
 --- !u!1 &991697968
 GameObject:
@@ -469,7 +469,7 @@ GameObject:
   - component: {fileID: 1031125314}
   - component: {fileID: 1031125315}
   m_Layer: 0
-  m_Name: Side Border
+  m_Name: Bottom Border
   m_TagString: Border
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -482,14 +482,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1031125313}
-  m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1697166263}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &1031125315
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -503,7 +503,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -10}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -514,7 +514,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 12, y: 1}
+  m_Size: {x: 18, y: 1}
   m_EdgeRadius: 0
 --- !u!1 &1186821590
 GameObject:
@@ -577,7 +577,7 @@ GameObject:
   - component: {fileID: 1636203693}
   - component: {fileID: 1636203694}
   m_Layer: 0
-  m_Name: Top Border
+  m_Name: Left Border
   m_TagString: Border
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -590,14 +590,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1636203692}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 5.5, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
+  m_LocalPosition: {x: -8.5, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1697166263}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
 --- !u!61 &1636203694
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -622,7 +622,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 18, y: 1}
+  m_Size: {x: 15, y: 1}
   m_EdgeRadius: 0
 --- !u!1 &1697166262
 GameObject:
@@ -688,11 +688,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obstacle: {fileID: 1170294943028096102, guid: 75eb583e9d5e17c419e66b4bd878a3f1, type: 3}
-  maxX: 3.5
-  minX: 3
-  maxY: 4
-  minY: -4
-  timeBetweenSpawn: 0.6
+  maxX: 6
+  minX: -6
+  maxY: 3.5
+  minY: 3
+  timeBetweenSpawn: 1
 --- !u!4 &1817216629
 Transform:
   m_ObjectHideFlags: 0
@@ -701,7 +701,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1817216627}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 15, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 10, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
