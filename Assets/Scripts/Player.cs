@@ -7,6 +7,8 @@ public class Player : MonoBehaviour
     [SerializeField] private float playerSpeed;
     private Rigidbody2D rb;
     private Vector2 playerDirection;
+    public bool isUp = false;
+    public bool isDown = false;
 
 
 
@@ -22,12 +24,51 @@ public class Player : MonoBehaviour
     {
         float directionX = Input.GetAxisRaw("Horizontal");
         playerDirection = new Vector2(directionX, 0).normalized;
+
+        if(Input.GetKey(KeyCode.W) && !(Input.GetKeyDown(KeyCode.S)))
+        {
+            gameObject.layer = LayerMask.NameToLayer("PlayerDown");
+            //gameObject.tag = "PlayerDown";
+        }
+        else if(Input.GetKey(KeyCode.S) && !(Input.GetKeyDown(KeyCode.W)))
+        {
+            gameObject.layer = LayerMask.NameToLayer("PlayerUp");
+            //gameObject.tag = "PlayerUp";
+        }
+        else
+        {
+            gameObject.layer = LayerMask.NameToLayer("Player");
+            //gameObject.tag = "Player";
+        }
     }
 
     private void FixedUpdate()
     {
         rb.velocity = new Vector2(playerDirection.x * playerSpeed, 0);
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.tag == "Border")
+        {
+            Destroy(this.gameObject);
+        }
+        //else if(collision.tag == "Obstacle")
+        //{
+        //    Destroy(this.gameObject);
+        //}    
+    }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.tag == "ObjectUp" && gameObject.tag == "PlayerUp")
+        {
+            Physics2D.IgnoreCollision( collision.gameObject.GetComponent<Collider2D>(), GetComponent<Collider2D>());
+        } else if(collision.gameObject.tag == "ObjectDown" && gameObject.tag == "PlayerDown")
+        {
+            Physics2D.IgnoreCollision( collision.gameObject.GetComponent<Collider2D>(), GetComponent<Collider2D>());
+        }
+ } 
 
 
 }

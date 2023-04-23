@@ -20,13 +20,13 @@ public class Obstacle : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.tag == "Border")
+        if(collision.tag == "Obstacle")
         {
-            Destroy(this.gameObject);
+            Destroy(collision.gameObject);
         }
         else if(collision.tag == "Player")
         {
-            Destroy(player.gameObject);
+            //Destroy(player.gameObject);
         }    
     }
 }

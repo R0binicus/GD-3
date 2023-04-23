@@ -7,16 +7,18 @@ public class GameOver : MonoBehaviour
 {
     public GameObject gameOverPanel;
 
+    private GameObject player;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(GameObject.FindGameObjectWithTag("Player") == null)
+        if(player == null)
         {
             gameOverPanel.SetActive(true);
         }

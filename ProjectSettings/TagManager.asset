@@ -6,6 +6,11 @@ TagManager:
   tags:
   - Level
   - Border
+  - Obstacle
+  - PlayerUp
+  - PlayerDown
+  - ObstacleUp
+  - ObstacleDown
   layers:
   - Default
   - TransparentFX
@@ -13,12 +18,12 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Obstacle
+  - ObstacleUp
+  - ObstacleDown
+  - Player
+  - PlayerUp
+  - PlayerDown
   - 
   - 
   - 
