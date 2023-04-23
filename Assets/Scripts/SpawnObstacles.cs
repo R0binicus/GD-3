@@ -22,8 +22,8 @@ public class SpawnObstacles : MonoBehaviour
     {
         if(Time.time > spawnTime)
         {
-            Spawn();
-            spawnTime = Time.time + timeBetweenSpawn;
+            //Spawn();
+            //spawnTime = Time.time + timeBetweenSpawn;
         }
     }
 
