@@ -20,7 +20,7 @@ public class Obstacle : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.tag == "Obstacle")
+        if(collision.tag == "Obstacle" || collision.tag == "ObstacleLeft" || (collision.tag == "ObstacleRight") || (collision.tag == "ObstacleUp") || (collision.tag == "ObstacleDown"))
         {
             Destroy(collision.gameObject);
         }

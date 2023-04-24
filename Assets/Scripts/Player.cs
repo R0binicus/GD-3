@@ -9,6 +9,7 @@ public class Player : MonoBehaviour
     private Vector2 playerDirection;
     public bool isUp = false;
     public bool isDown = false;
+    [SerializeField] private AudioSource deathSound;
 
 
 
@@ -51,6 +52,7 @@ public class Player : MonoBehaviour
     {
         if(collision.tag == "Border")
         {
+            deathSound.Play();
             Destroy(this.gameObject);
         }
         //else if(collision.tag == "Obstacle")

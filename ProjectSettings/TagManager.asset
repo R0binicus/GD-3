@@ -11,6 +11,8 @@ TagManager:
   - PlayerDown
   - ObstacleUp
   - ObstacleDown
+  - ObstacleLeft
+  - ObstacleRight
   layers:
   - Default
   - TransparentFX

@@ -21,6 +21,10 @@ public class GameOver : MonoBehaviour
         if(player == null)
         {
             gameOverPanel.SetActive(true);
+            if(Input.GetKeyDown(KeyCode.Space))
+            {
+                Restart();
+            }
         }
     }
 
