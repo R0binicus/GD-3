@@ -23,8 +23,11 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float directionX = Input.GetAxisRaw("Horizontal");
-        playerDirection = new Vector2(directionX, 0).normalized;
+        //float directionX = Input.GetAxisRaw("Horizontal");
+        float directionLeft = -1;
+        float directionRight = 1;
+        //playerDirection = new Vector2(directionLeft, 0).normalized;
+
 
         if(Input.GetKey(KeyCode.W) && !(Input.GetKeyDown(KeyCode.S)))
         {
@@ -34,6 +37,18 @@ public class Player : MonoBehaviour
         else if(Input.GetKey(KeyCode.S) && !(Input.GetKeyDown(KeyCode.W)))
         {
             gameObject.layer = LayerMask.NameToLayer("PlayerUp");
+            //gameObject.tag = "PlayerUp";
+        }
+        else if (Input.GetKey(KeyCode.A) && !(Input.GetKeyDown(KeyCode.D)))
+        {
+            gameObject.layer = LayerMask.NameToLayer("Player");
+            playerDirection = new Vector2(directionLeft , 0).normalized;
+            //gameObject.tag = "PlayerUp";
+        }
+        else if (Input.GetKey(KeyCode.D) && !(Input.GetKeyDown(KeyCode.A)))
+        {
+            gameObject.layer = LayerMask.NameToLayer("Player");
+            playerDirection = new Vector2(directionRight, 0).normalized;
             //gameObject.tag = "PlayerUp";
         }
         else
