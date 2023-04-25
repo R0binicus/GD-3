@@ -27,9 +27,9 @@ public class Timer : MonoBehaviour
 
     void DisplayTime(float displayTime)
     {
-        //float minutes = Mathf.FloorToInt(displayTime / 60);
-        //float minutes = Mathf.FloorToInt(displayTime % 60);
-        //timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
-        timerText.text = "Time: " + (timerTime >= 60 ? Mathf.FloorToInt(timerTime / 60).ToString() + "m " : "") + $"{timerTime % 60:0.000}s";
+        float minutes = Mathf.FloorToInt(displayTime / 60);
+        float seconds = Mathf.FloorToInt(displayTime % 60);
+        timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
+        //timerText.text = "Time: " + (timerTime >= 60 ? Mathf.FloorToInt(timerTime / 60).ToString() + "m " : "") + $"{timerTime % 60:0.000}s";
     }
 }
