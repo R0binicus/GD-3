@@ -17,8 +17,17 @@ public sealed class GameManager : MonoBehaviour
 
     private void Update()
     {
+        
         if (Input.GetKeyDown(KeyCode.Escape)) {
-            SceneManager.LoadScene("StartMenu");
+            if(SceneManager.GetActiveScene().name == "StartMenu")
+            {
+                Application.Quit();
+		        Debug.Log("Quit!");
+            } 
+            else 
+            {
+                SceneManager.LoadScene("StartMenu");
+            }
 
         }
 
