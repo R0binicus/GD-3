@@ -10,6 +10,19 @@ public class Player : MonoBehaviour
     public bool isUp = false;
     public bool isDown = false;
     [SerializeField] private AudioSource deathSound;
+    [SerializeField] private Sprite idle;
+    [SerializeField] private Sprite up;
+    [SerializeField] private Sprite down;
+    [SerializeField] private Sprite left;
+    [SerializeField] private Sprite right;
+
+    private Animator anim;
+
+    private SpriteRenderer spriteRenderer;
+    private bool animUp;
+    private bool animDown;
+    private bool animLeft;
+    private bool animRight;
 
 
 
@@ -18,6 +31,7 @@ public class Player : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        spriteRenderer = GetComponentInChildren<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -32,29 +46,51 @@ public class Player : MonoBehaviour
         if(Input.GetKey(KeyCode.W) && !(Input.GetKeyDown(KeyCode.S)))
         {
             gameObject.layer = LayerMask.NameToLayer("PlayerDown");
+            spriteRenderer.sprite = down;
+
             //gameObject.tag = "PlayerDown";
         }
         else if(Input.GetKey(KeyCode.S) && !(Input.GetKeyDown(KeyCode.W)))
         {
             gameObject.layer = LayerMask.NameToLayer("PlayerUp");
+            spriteRenderer.sprite = up;
+            animUp = true;
+            animDown = false;
+            animLeft = false;
+            animRight = false;
             //gameObject.tag = "PlayerUp";
         }
         else if (Input.GetKey(KeyCode.A) && !(Input.GetKeyDown(KeyCode.D)))
         {
             gameObject.layer = LayerMask.NameToLayer("Player");
             playerDirection = new Vector2(directionLeft , 0).normalized;
+            spriteRenderer.sprite = left;
+            animUp = false;
+            animDown = false;
+            animLeft = true;
+            animRight = false;
             //gameObject.tag = "PlayerUp";
         }
         else if (Input.GetKey(KeyCode.D) && !(Input.GetKeyDown(KeyCode.A)))
         {
             gameObject.layer = LayerMask.NameToLayer("Player");
             playerDirection = new Vector2(directionRight, 0).normalized;
+            spriteRenderer.sprite = right;
+            animUp = false;
+            animDown = false;
+            animLeft = false;
+            animRight = true;
             //gameObject.tag = "PlayerUp";
         }
         else
         {
             gameObject.layer = LayerMask.NameToLayer("Player");
             //gameObject.tag = "Player";
+            spriteRenderer.sprite = idle;
+            animUp = true;
+            animDown = false;
+            animLeft = false;
+            animRight = false;
         }
     }
 

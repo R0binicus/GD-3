@@ -23,6 +23,7 @@ public class SpawnObstacles : MonoBehaviour
     private bool Inc04 = false;
     private bool Inc05 = false;
     private bool Inc06 = false;
+    private bool Inc07 = false;
 
     // Start is called before the first frame update
     void Start()
@@ -72,6 +73,11 @@ public class SpawnObstacles : MonoBehaviour
         {
             Inc06 = true;
             timeBetweenSpawn = timeBetweenSpawn - 0.05f;
+        }
+         else if(gameTime > (startTime + 70) && Inc07 == false)
+        {
+            Inc07 = true;
+            timeBetweenSpawn = timeBetweenSpawn - 0.1f;
         }
 
     }
